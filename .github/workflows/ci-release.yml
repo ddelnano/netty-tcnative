@@ -74,7 +74,7 @@ jobs:
 
     steps:
       - name: Download release-workspace
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: prepare-release-workspace
           path: ./prepare-release-workspace/
@@ -159,7 +159,7 @@ jobs:
     needs: prepare-release
     steps:
       - name: Download release-workspace
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: prepare-release-workspace
           path: prepare-release-workspace
@@ -240,7 +240,7 @@ jobs:
     needs: [stage-release-linux, stage-release-windows-x86_64]
     steps:
       - name: Download release-workspace
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: prepare-release-workspace
           path: ./prepare-release-workspace/
@@ -267,25 +267,25 @@ jobs:
       # Hardcode the staging artifacts that need to be downloaded.
       # These must match the matrix setups. There is currently no way to pull this out of the config.
       - name: Download windows-x86_64 staging directory
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: windows-x86_64-local-staging
           path: ~/windows-x86_64-local-staging
 
       - name: Download centos7-aarch64 staging directory
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: centos7-aarch64-local-staging
           path: ~/centos7-aarch64-local-staging
 
       - name: Download debian7-x86_64 staging directory
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: debian7-x86_64-local-staging
           path: ~/debian7-x86_64-local-staging
 
       - name: Download centos6-x86_64 staging directory
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: centos6-x86_64-local-staging
           path: ~/centos6-x86_64-local-staging
